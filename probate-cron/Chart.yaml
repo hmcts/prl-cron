@@ -3,7 +3,7 @@ description: Probae cron jobs
 home: https://github.com/hmcts/probate-cron
 apiVersion: v2
 appVersion: "1.0"
-version: 0.0.7
+version: 0.0.8
 maintainers:
   - name: HMCTS Probate Team
 dependencies:
