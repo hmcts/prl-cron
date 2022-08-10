@@ -6,8 +6,64 @@ job:
       secrets:
         - name: AppInsightsInstrumentationKey
           alias: azure.application-insights.instrumentation-key
+        - name: probatemandb-POSTGRES-PASS
+          alias: spring.datasource.password
         - name: s2s-probate-backend
-          alias: S2S_AUTH_TOTP_SECRET
+          alias: idam.s2s-auth.totp_secret
+        - name: probate-bo-govNotifyApiKey
+          alias: notifications.govNotifyApiKey
+        - name: authTokenEmail
+          alias: auth.provider.client.email
+        - name: authTokenPassword
+          alias: auth.provider.client.password
+        - name: excelaEmail
+          alias: excelaEmail
+        - name: smeeAndFordEmail
+          alias: smeeAndFordEmail
+        - name: ftpSignature
+          alias: ftp.client.signature
+        - name: ftpEnv
+          alias: ftp.client.environment
+        - name: probate-bo-grantSignatureKey
+          alias: pdf.service.grantSignatureSecretKey
+        - name: probate-bo-grantSignatureFile
+          alias: pdf.service.grantSignatureEncryptedFile
+        - name: pdfServiceBaseUrl
+          alias: docmosis.service.uri
+        - name: pdfServiceAccessKey
+          alias: docmosis.service.accessKey
+        - name: pdfServiceHealthUrl
+          alias: docmosis.service.health.uri
+        - name: idam-secret-probate
+          alias: auth.provider.client.secret
+        - name: idamRedirectUrl
+          alias: auth.provider.client.redirect
+        - name: launchdarkly-key
+          alias: ld.sdk_key
+        - name: launchdarklyUserkeyBackend
+          alias: ld.user.key
+        - name: levPublicCertificate
+          alias: lev.ssl.publicCertificate
+        - name: levPrivateKey
+          alias: lev.ssl.privateKey
+        - name: levAccessTokenUri
+          alias: lev.bearertoken.accessTokenUri
+        - name: levClientId
+          alias: lev.bearertoken.clientId
+        - name: levClientSecret
+          alias: lev.bearertoken.clientSecret
+        - name: levUsername
+          alias: lev.bearertoken.username
+        - name: levPassword
+          alias: lev.bearertoken.password
+        - name: levDeathUrl
+          alias: lev.death.url
+        - name: schedulerCaseWorkerUser
+          alias: SCHEDULER_CASEWORKER_USERNAME
+        - name: schedulerCaseWorkerUser
+          alias: SCHEDULER_CASEWORKER_PASSWORD
+        - name: blob-storage-connection-string
+          alias: BLOB_STORAGE_CONNECTION_STRING
         - name: ccidam-idam-api-secrets-probate
           alias: AUTH2_CLIENT_SECRET
         - name: idamRedirectUrl
@@ -16,10 +72,6 @@ job:
           alias: PAYMENT_CASEWORKER_PASSWORD
         - name: payCaseWorkerUser
           alias: PAYMENT_CASEWORKER_USERNAME
-        - name: schedulerCaseWorkerUser
-          alias: SCHEDULER_CASEWORKER_USERNAME
-        - name: schedulerCaseWorkerPass
-          alias: SCHEDULER_CASEWORKER_PASSWORD
   environment:
     REFORM_TEAM: probate
     REFORM_SERVICE_NAME: orchestrator-service
@@ -44,6 +96,26 @@ job:
     IDAM_CLIENT_ID: "probate"
     AUTH_S2S_CLIENT_ID: "probate_backend"
     MIGRATION_JOB_SCHEDULER: false
+
+    IDAM_CLIENT_NAME: probate
+    S2S_AUTH_URL: http://rpe-service-auth-provider-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    PDF_SERVICE_URL: http://cmc-pdf-service-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    PRINTSERVICE_HOST: https://return-case-doc-ccd.nonprod.platform.hmcts.net
+    IDAM_SERVICE_HOST: https://idam-api.{{ .Values.global.environment }}.platform.hmcts.net
+    FEE_API_URL: http://fees-register-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    EVIDENCE_MANAGEMENT_HOST: http://dm-store-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    CCD_GATEWAY_HOST: http://ccd-api-gateway-web-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    SEND_LETTER_SERIVCE_BASEURL: http://rpe-send-letter-service-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    CCD_DATA_STORE_API_HOST: http://ccd-data-store-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    PRD_API_URL: http://rd-professional-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    PAYMENT_URL: http://payment-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    ACA_SERVICE_API_BASEURL: http://aac-manage-case-assignment-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+    CASE_DOCUMENT_AM_URL: http://ccd-case-document-am-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
+
+    PROBATE_POSTGRESQL_USER: probateman_user@probatemandb-postgres-db-v11-{{ .Values.global.environment }}
+    PROBATE_POSTGRESQL_HOSTNAME: probatemandb-postgres-db-v11-{{ .Values.global.environment }}.postgres.database.azure.com
+    PROBATE_POSTGRESQL_DATABASE: probatemandb
+    PROBATE_POSTGRESQL_PORT: 5432
 
   args:
     - run
