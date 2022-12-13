@@ -1,4 +1,4 @@
-name: probate-cron pipeline
+name: prl-cron pipeline
 trigger:
   branches:
     include:
@@ -21,8 +21,8 @@ jobs:
     steps:
       - template: steps/charts/validate.yaml@cnp-library
         parameters:
-          chartName: probate-cron
-          chartReleaseName: probate-cron-ci-test
+          chartName: prl-cron
+          chartReleaseName: prl-cron-ci-test
           chartNamespace: chart-tests
 
   - job: Release
@@ -38,6 +38,6 @@ jobs:
     steps:
       - template: steps/charts/release.yaml@cnp-library
         parameters:
-          chartName: probate-cron
-          chartReleaseName: probate-cron
+          chartName: prl-cron
+          chartReleaseName: prl-cron
           chartNamespace: chart-tests
