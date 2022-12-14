@@ -1,11 +1,11 @@
-name: probate-cron
-description: Probae cron jobs
-home: https://github.com/hmcts/probate-cron
+name: prl-cron
+description: Prl cron jobs
+home: https://github.com/hmcts/prl-cron
 apiVersion: v2
 appVersion: "1.0"
 version: 0.0.8
 maintainers:
-  - name: HMCTS Probate Team
+  - name: HMCTS PRL Team
 dependencies:
   - name: job
     version: v0.7.3

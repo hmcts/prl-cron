@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := all
-CHART := probate-cron
+CHART := prl-cron
 RELEASE := chart-${CHART}-release
 NAMESPACE := chart-tests
 TEST := ${RELEASE}-test-service
