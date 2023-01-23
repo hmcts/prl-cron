@@ -9,4 +9,4 @@ maintainers:
 dependencies:
   - name: job
     version: v0.7.3
-    repository: '@hmctspublic'
+    repository: https://hmctspublic.azurecr.io/helm/v1/repo/
