@@ -1,11 +1,8 @@
 job:
   image: hmctspublic.azurecr.io/prl/cos:latest
   aadIdentityName: prl
-
-  args:
-    - run
-    - EmailNotificationTask
-  schedule: "* 5 * * * *"
+#ADD KEY VAULTS & ENVIRONMENT VARS ?
+  schedule: 0,10,20,30,40,50 * * * * #0 3 * * * IS IT NEEDED HERE ?
   concurrencyPolicy: Forbid
 global:
   jobKind: CronJob
