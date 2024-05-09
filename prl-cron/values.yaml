@@ -61,7 +61,7 @@ job:
         COMMON_DATA_API: http://rd-commondata-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
         SEND_LETTER_URL: http://rpe-send-letter-service-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
         AM_ROLE_ASSIGNMENT_API_URL: http://am-role-assignment-service-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
-  schedule: 0,10,20,30,40,50 * * * * #0 3 * * *
+  schedule: 0,10,20,30,40,50 * * * * #0 9 * * *
   concurrencyPolicy: Forbid
 global:
   jobKind: CronJob
