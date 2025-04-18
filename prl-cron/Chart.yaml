@@ -3,7 +3,7 @@ description: Prl cron jobs
 home: https://github.com/hmcts/prl-cron
 apiVersion: v2
 appVersion: "1.0"
-version: 0.0.14
+version: 0.0.15
 maintainers:
   - name: HMCTS PRL Team
 dependencies:
