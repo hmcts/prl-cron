@@ -1,5 +1,5 @@
 job:
-  image: hmctspublic.azurecr.io/prl/cos:latest
+  image: hmctsprod.azurecr.io/prl/cos:latest
   aadIdentityName: prl
   keyVaults:
     prl:

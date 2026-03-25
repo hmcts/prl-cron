@@ -3,10 +3,10 @@ description: Prl cron jobs
 home: https://github.com/hmcts/prl-cron
 apiVersion: v2
 appVersion: "1.0"
-version: 0.0.15
+version: 0.0.16
 maintainers:
   - name: HMCTS PRL Team
 dependencies:
   - name: job
     version: 2.2.0
-    repository: 'oci://hmctspublic.azurecr.io/helm'
+    repository: 'oci://hmctsprod.azurecr.io/helm'
