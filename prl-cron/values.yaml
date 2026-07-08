@@ -48,6 +48,8 @@ job:
           alias: WELSH_COURT_MAPPING
         - name: app-insights-connection-string
           alias: app-insights-connection-string
+        - name: docmosis-api-key
+          alias: DOCMOSIS_ACCESS_KEY
       environment:
         FEATURE_EXAMPLE: true
         RUNS_LOCALLY: false
@@ -68,7 +70,6 @@ job:
         IDAM_S2S_AUTH_MICROSERVICE: prl_cos_api
         PAY_URL: http://payment-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
         PAY_CALLBACK_URL: http://prl-cos-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal/service-request-update
-        PRL_DGS_API_URL: http://prl-dgs-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
         FEE_REGISTER_API_URL: http://fees-register-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
         PRL_S2S_AUTHORISED_SERVICES: api_gw,prl_citizen_frontend,fis_hmc_api,payment_app,ccd_data
         FACT_API: http://fact-api-{{ .Values.global.environment }}.service.core-compute-{{ .Values.global.environment }}.internal
