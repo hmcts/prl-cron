@@ -8,5 +8,5 @@ maintainers:
   - name: HMCTS PRL Team
 dependencies:
   - name: job
-    version: 2.2.0
+    version: 2.2.2
     repository: 'oci://hmctsprod.azurecr.io/helm'
